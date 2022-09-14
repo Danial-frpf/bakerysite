@@ -1,26 +1,108 @@
-html,
-body {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
+
+:root {
+    /* Minimum font size */
+    --baseFont: 12px;
+    --p: calc(var(--baseFont) + 1vw);
+    --h2: calc(var(--baseFont) + 3vw);
+    --h1: calc(var(--baseFont) + 6vw);
+
+    /* Main Color Pallet with opacity */
+    --main-800: #cc6d4d;
+    --main-800-10: #cc6d4d10;
+    --main-800-20: #cc6d4d20;
+    --main-800-30: #cc6d4d30;
+    --main-800-40: #cc6d4d40;
+    --main-800-50: #cc6d4d50;
+    --main-800-60: #cc6d4d60;
+    --main-800-70: #cc6d4d70;
+    --main-800-80: #cc6d4d80;
+    --main-800-90: #cc6d4d90;
+
+    --main-500: #eba27b;
+    --main-500-10: #eba27b10;
+    --main-500-20: #eba27b20;
+    --main-500-30: #eba27b30;
+    --main-500-40: #eba27b40;
+    --main-500-50: #eba27b50;
+    --main-500-60: #eba27b60;
+    --main-500-70: #eba27b70;
+    --main-500-80: #eba27b80;
+    --main-500-90: #eba27b90;
+
+    --main-300: #feded4;
+    --main-300-10: #feded410;
+    --main-300-20: #feded420;
+    --main-300-30: #feded430;
+    --main-300-40: #feded440;
+    --main-300-50: #feded450;
+    --main-300-60: #feded460;
+    --main-300-70: #feded470;
+    --main-300-80: #feded480;
+    --main-300-90: #feded490;
+
+    /* Secondary Color Pallet with opacity */
+
+    --secondary-orange: #ff7643;
+    --secondary-orange-10: #ff764310;
+    --secondary-orange-20: #ff764320;
+    --secondary-orange-30: #ff764330;
+    --secondary-orange-40: #ff764340;
+    --secondary-orange-50: #ff764350;
+    --secondary-orange-60: #ff764360;
+    --secondary-orange-70: #ff764370;
+    --secondary-orange-80: #ff764380;
+    --secondary-orange-90: #ff764390;
+
+    --secondary-yellow: #ffca61;
+    --secondary-yellow-10: #ffca6110;
+    --secondary-yellow-20: #ffca6120;
+    --secondary-yellow-30: #ffca6130;
+    --secondary-yellow-40: #ffca6140;
+    --secondary-yellow-50: #ffca6150;
+    --secondary-yellow-60: #ffca6160;
+    --secondary-yellow-70: #ffca6170;
+    --secondary-yellow-80: #ffca6180;
+    --secondary-yellow-90: #ffca6190;
+
+    --secondary-blue: #b4d0d6;
+    --secondary-blue-10: #b4d0d610;
+    --secondary-blue-20: #b4d0d620;
+    --secondary-blue-30: #b4d0d630;
+    --secondary-blue-40: #b4d0d640;
+    --secondary-blue-50: #b4d0d650;
+    --secondary-blue-60: #b4d0d660;
+    --secondary-blue-70: #b4d0d670;
+    --secondary-blue-80: #b4d0d680;
+    --secondary-blue-90: #b4d0d690;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+body {
+    background-image: url(../public/Bakerybg.jpg);
+    background-size: cover;
+    background-repeat: repeat-y;
 }
 
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Salsa", cursive;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 0.1px;
 }
 
-@media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
-    body {
-        color: white;
-        background: black;
-    }
+h1 {
+    font-size: var(--h1);
+    color: var(--main-800);
+}
+
+h2 {
+    font-size: var(--h2);
+    color: var(--main-800);
+}
+
+p {
+    font-size: var(--baseFont);
+    color: var(--main-800);
 }

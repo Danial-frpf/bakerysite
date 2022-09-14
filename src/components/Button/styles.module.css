@@ -1,0 +1,35 @@
+.container {
+    background-color: var(--secondary-orange-40);
+    border: 2px solid var(--main-800);
+    transition: scale 500ms ease-in-out;
+}
+
+.container:hover {
+    background-color: var(--secondary-yellow-40);
+    border-color: var(--secondary-orange);
+}
+
+.container:active {
+    background-color: var(--secondary-blue-80);
+    border-color: var(--secondary-orange);
+    scale: 0.8;
+}
+
+.container span:hover {
+    color: var(--secondary-orange);
+}
+
+.sm {
+    border-radius: 4px;
+    padding: 0.5vh 0.5vw;
+}
+
+.md {
+    border-radius: 8px;
+    padding: 1vh 1vw;
+}
+
+.lg {
+    border-radius: 16px;
+    padding: 2.5vh 2vw 0 2vw;
+}

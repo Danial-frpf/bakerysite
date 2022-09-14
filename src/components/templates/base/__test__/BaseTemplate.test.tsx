@@ -1,23 +1,24 @@
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
+import { act } from "react-dom/test-utils";
 import BaseTemplate from "..";
 import { render, cleanup } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import { Base } from "../BaseTemplate.stories";
 
 afterEach(cleanup);
-it("Renders correctly without crashing", () => {
+it("renders correctly without crashing", () => {
     const div = document.createElement("div");
-    ReactDOM.render(
-        <BaseTemplate sampleTextProp="nothing"></BaseTemplate>,
-        div
-    );
+    act(() => {
+        createRoot(div!).render(
+            <BaseTemplate sampleTextProp="test"></BaseTemplate>
+        );
+    });
 });
 
 it("renders BaseTemplate correctly", () => {
     const { getByTestId } = render(
-        <BaseTemplate sampleTextProp="things"></BaseTemplate>
+        <BaseTemplate sampleTextProp="test"></BaseTemplate>
     );
-    expect(getByTestId("BaseTemplate")).toHaveTextContent("things");
+    expect(getByTestId("BaseTemplate")).toHaveTextContent("test");
 });
 
 it("matches snapshot", () => {

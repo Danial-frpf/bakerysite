@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="container md"
+  data-testid="InputField"
+>
+  <h2>
+    <span>
+      username
+    </span>
+  </h2>
+  <input
+    name="username"
+    onChange={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`matches snapshot 2`] = `
+<div
+  className="container sm"
+  data-testid="InputField"
+>
+  <p>
+    <span>
+      username
+    </span>
+  </p>
+  <input
+    name="username"
+    onChange={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`matches snapshot 3`] = `
+<div
+  className="container lg"
+  data-testid="InputField"
+>
+  <h1>
+    <span>
+      username
+    </span>
+  </h1>
+  <input
+    name="username"
+    onChange={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+</div>
+`;
