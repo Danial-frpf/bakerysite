@@ -17,6 +17,7 @@ const Template: ComponentStory<typeof InputField> = (args) => (
 export const Small = Template.bind({});
 export const Medium = Template.bind({});
 export const Large = Template.bind({});
+export const ExtraLarge = Template.bind({});
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 
@@ -30,4 +31,8 @@ Medium.args = {
 
 Large.args = {
     ...mockInputFieldProps.large,
+} as IInputField;
+
+ExtraLarge.args = {
+    ...mockInputFieldProps.extraLarge,
 } as IInputField;

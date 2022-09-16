@@ -15,8 +15,14 @@ const large: IButton = {
     size: "lg",
 };
 
+const extraLarge: IButton = {
+    label: "extraLarge",
+    size: "xl",
+};
+
 export const mockButtonProps = {
     small,
     medium,
     large,
+    extraLarge,
 };

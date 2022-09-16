@@ -1,17 +1,33 @@
 .container {
     display: flex;
+    height: 100vh;
+    align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 1vh 1vw;
 }
 
 .form {
+    height: min-content;
+    width: 50vw;
     background-color: var(--secondary-orange-30);
     border: 2px solid var(--main-800);
     border-radius: clamp(4px, 8px, 16px);
     padding: 1vh 1vw;
-    margin-top: 20vh;
 }
 
 .form h1 {
     margin-bottom: 3vh;
+}
+
+@media (max-width: 1028px) {
+    .form {
+        width: 65vw;
+    }
+}
+
+@media (max-width: 512px) {
+    .form {
+        width: auto;
+    }
 }

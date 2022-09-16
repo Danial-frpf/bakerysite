@@ -26,6 +26,13 @@ it("renders correctly without crashing", () => {
     });
 });
 
+it("renders correctly without crashing", () => {
+    const div = document.createElement("div");
+    act(() => {
+        createRoot(div!).render(<Button label="Button" size="xl"></Button>);
+    });
+});
+
 it("renders Button correctly", () => {
     const { getByTestId } = render(<Button label="Button"></Button>);
     expect(getByTestId("Button")).toHaveTextContent("Button");
@@ -38,6 +45,11 @@ it("renders Button correctly", () => {
 
 it("renders Button correctly", () => {
     const { getByTestId } = render(<Button label="Button" size="sm"></Button>);
+    expect(getByTestId("Button")).toHaveTextContent("Button");
+});
+
+it("renders Button correctly", () => {
+    const { getByTestId } = render(<Button label="Button" size="xl"></Button>);
     expect(getByTestId("Button")).toHaveTextContent("Button");
 });
 
@@ -56,6 +68,13 @@ it("matches snapshot", () => {
 it("matches snapshot", () => {
     const tree = renderer
         .create(<Button label="Button" size="sm"></Button>)
+        .toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+it("matches snapshot", () => {
+    const tree = renderer
+        .create(<Button label="Button" size="xl"></Button>)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });

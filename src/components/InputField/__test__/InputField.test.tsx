@@ -32,6 +32,15 @@ it("renders correctly without crashing", () => {
     });
 });
 
+it("renders correctly without crashing", () => {
+    const div = document.createElement("div");
+    act(() => {
+        createRoot(div!).render(
+            <InputField label="username" name="username" size="xl"></InputField>
+        );
+    });
+});
+
 it("renders InputField correctly", () => {
     const { getByTestId } = render(
         <InputField label="username" name="username"></InputField>
@@ -49,6 +58,13 @@ it("renders InputField correctly", () => {
 it("renders InputField correctly", () => {
     const { getByTestId } = render(
         <InputField label="username" name="username" size="lg"></InputField>
+    );
+    expect(getByTestId("InputField")).toHaveTextContent("username");
+});
+
+it("renders InputField correctly", () => {
+    const { getByTestId } = render(
+        <InputField label="username" name="username" size="xl"></InputField>
     );
     expect(getByTestId("InputField")).toHaveTextContent("username");
 });
@@ -73,6 +89,15 @@ it("matches snapshot", () => {
     const tree = renderer
         .create(
             <InputField label="username" name="username" size="lg"></InputField>
+        )
+        .toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+it("matches snapshot", () => {
+    const tree = renderer
+        .create(
+            <InputField label="username" name="username" size="xl"></InputField>
         )
         .toJSON();
     expect(tree).toMatchSnapshot();

@@ -6,7 +6,7 @@ export interface IInputField {
     name: string;
     placeholder?: string;
     type?: "text" | "password";
-    size?: "sm" | "md" | "lg";
+    size?: "sm" | "md" | "lg" | "xl";
 }
 const InputField: React.FC<IInputField> = ({
     label,
@@ -19,6 +19,7 @@ const InputField: React.FC<IInputField> = ({
     const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value);
     };
+
     if (size === "sm") {
         return (
             <div
@@ -45,6 +46,26 @@ const InputField: React.FC<IInputField> = ({
                 className={`${styles.container} ${styles.md}`}
                 data-testid="InputField"
             >
+                <h4>
+                    <span>{label}</span>
+                </h4>
+                <input
+                    type={type}
+                    name={name}
+                    placeholder={placeholder}
+                    value={value}
+                    onChange={changeHandler}
+                />
+            </div>
+        );
+    }
+
+    if (size === "lg") {
+        return (
+            <div
+                className={`${styles.container} ${styles.md}`}
+                data-testid="InputField"
+            >
                 <h2>
                     <span>{label}</span>
                 </h2>
@@ -61,7 +82,7 @@ const InputField: React.FC<IInputField> = ({
 
     return (
         <div
-            className={`${styles.container} ${styles.lg}`}
+            className={`${styles.container} ${styles.xl}`}
             data-testid="InputField"
         >
             <h1>

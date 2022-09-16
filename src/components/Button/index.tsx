@@ -1,8 +1,9 @@
+import { useState } from "react";
 import styles from "./styles.module.css";
 
 export interface IButton {
     label: string;
-    size?: "sm" | "md" | "lg";
+    size?: "sm" | "md" | "lg" | "xl";
 }
 const Button: React.FC<IButton> = ({ label, size = "md" }) => {
     if (size === "sm") {
@@ -26,6 +27,20 @@ const Button: React.FC<IButton> = ({ label, size = "md" }) => {
                 type="submit"
                 data-testid="Button"
             >
+                <h4>
+                    <span>{label}</span>
+                </h4>
+            </button>
+        );
+    }
+
+    if (size === "lg") {
+        return (
+            <button
+                className={`${styles.container} ${styles.lg}`}
+                type="submit"
+                data-testid="Button"
+            >
                 <h2>
                     <span>{label}</span>
                 </h2>
@@ -35,7 +50,7 @@ const Button: React.FC<IButton> = ({ label, size = "md" }) => {
 
     return (
         <button
-            className={`${styles.container} ${styles.lg}`}
+            className={`${styles.container} ${styles.xl}`}
             type="submit"
             data-testid="Button"
         >

@@ -15,6 +15,7 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Small = Template.bind({});
 export const Medium = Template.bind({});
 export const Large = Template.bind({});
+export const ExtraLarge = Template.bind({});
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 
@@ -28,4 +29,8 @@ Medium.args = {
 
 Large.args = {
     ...mockButtonProps.large,
+} as IButton;
+
+ExtraLarge.args = {
+    ...mockButtonProps.extraLarge,
 } as IButton;

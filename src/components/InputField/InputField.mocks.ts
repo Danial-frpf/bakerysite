@@ -24,8 +24,17 @@ const large: IInputField = {
     type: "text",
 };
 
+const extraLarge: IInputField = {
+    label: "User:",
+    name: "user",
+    placeholder: "placeholder...",
+    size: "xl",
+    type: "text",
+};
+
 export const mockInputFieldProps = {
     small,
     medium,
     large,
+    extraLarge,
 };

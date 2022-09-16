@@ -6,11 +6,11 @@ exports[`matches snapshot 1`] = `
   data-testid="Button"
   type="submit"
 >
-  <h2>
+  <h4>
     <span>
       Button
     </span>
-  </h2>
+  </h4>
 </button>
 `;
 
@@ -20,11 +20,11 @@ exports[`matches snapshot 2`] = `
   data-testid="Button"
   type="submit"
 >
-  <h1>
+  <h2>
     <span>
       Button
     </span>
-  </h1>
+  </h2>
 </button>
 `;
 
@@ -39,5 +39,19 @@ exports[`matches snapshot 3`] = `
       Button
     </span>
   </p>
+</button>
+`;
+
+exports[`matches snapshot 4`] = `
+<button
+  className="container xl"
+  data-testid="Button"
+  type="submit"
+>
+  <h1>
+    <span>
+      Button
+    </span>
+  </h1>
 </button>
 `;

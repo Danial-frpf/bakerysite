@@ -5,11 +5,11 @@ exports[`matches snapshot 1`] = `
   className="container md"
   data-testid="InputField"
 >
-  <h2>
+  <h4>
     <span>
       username
     </span>
-  </h2>
+  </h4>
   <input
     name="username"
     onChange={[Function]}
@@ -42,7 +42,27 @@ exports[`matches snapshot 2`] = `
 
 exports[`matches snapshot 3`] = `
 <div
-  className="container lg"
+  className="container md"
+  data-testid="InputField"
+>
+  <h2>
+    <span>
+      username
+    </span>
+  </h2>
+  <input
+    name="username"
+    onChange={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`matches snapshot 4`] = `
+<div
+  className="container xl"
   data-testid="InputField"
 >
   <h1>

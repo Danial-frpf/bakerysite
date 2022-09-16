@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    height: 100vh;
+    padding: 1vh 1vw;
+}
+
+.container h1 {
+    position: absolute;
+    top: 0;
+}
+
+.panel {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    background-color: var(--secondary-orange-40);
+}
+
+.panel a {
+    border: 2px solid var(--main-500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1vh 4vw;
+    font-size: var(--h4);
+    color: var(--main-800);
+    text-decoration: none;
+}
+
+.panel a:nth-child(2),
+.panel a:nth-child(3) {
+    border: 2px solid var(--main-800);
+    background-color: var(--main-500-40);
+}
+
+.panel a:hover {
+    border-color: var(--secondary-orange);
+    background-color: var(--secondary-orange-40);
+}
+
+.panel a:active {
+    background-color: var(--secondary-blue-40);
+}
