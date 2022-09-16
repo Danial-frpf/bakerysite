@@ -1,8 +1,16 @@
-import { NextPage } from "next";
 import Link from "next/link";
+import Router from "next/router";
+import { useContext } from "react";
+import { isValidAdmin } from "../../lib/auth/admin";
+import { AdminContext } from "../../src/context";
+import ContextLayout from "../../src/layouts/ContextLayout";
 import styles from "../../styles/AdminPanel.module.css";
+import { NextPageWithLayout } from "../page";
 
-const AdminPanel: NextPage = () => {
+const AdminPanel: NextPageWithLayout = () => {
+    const adminContext = useContext(AdminContext);
+    if (!isValidAdmin(adminContext?.jwtAdmin)) Router.push("/login");
+
     return (
         <div className={styles.container}>
             <h1>Admin Panel</h1>
@@ -25,3 +33,7 @@ const AdminPanel: NextPage = () => {
 };
 
 export default AdminPanel;
+
+AdminPanel.getLayout = (page) => {
+    return <ContextLayout>{page}</ContextLayout>;
+};
