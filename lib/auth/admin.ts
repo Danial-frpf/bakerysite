@@ -6,3 +6,10 @@ export const isValidAdmin = (token: string | undefined) => {
     } else return false;
     return true;
 };
+
+export const isInvalidAdmin = (token: string | undefined) => {
+    if (token) {
+        if (isExpired(token)) return true;
+    } else return true;
+    return false;
+};

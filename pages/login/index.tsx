@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Button from "../../src/components/Button";
 import InputField from "../../src/components/InputField";
 import styles from "../../styles/Login.module.css";
@@ -12,8 +12,6 @@ import { isValidAdmin } from "../../lib/auth/admin";
 const Login: NextPageWithLayout = () => {
     const [error, setError] = useState("");
     const adminContext = useContext(AdminContext);
-
-    if (isValidAdmin(adminContext?.jwtAdmin)) Router.push("/adminpanel");
 
     const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -43,6 +41,10 @@ const Login: NextPageWithLayout = () => {
             setError("Network Problem");
         }
     };
+
+    useEffect(() => {
+        if (isValidAdmin(adminContext?.jwtAdmin)) Router.push("/adminpanel");
+    }, [adminContext]);
 
     return (
         <div className={`${styles.container}`}>

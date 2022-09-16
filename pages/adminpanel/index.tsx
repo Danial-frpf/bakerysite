@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Router from "next/router";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { isValidAdmin } from "../../lib/auth/admin";
 import { AdminContext } from "../../src/context";
 import ContextLayout from "../../src/layouts/ContextLayout";
@@ -9,7 +9,10 @@ import { NextPageWithLayout } from "../page";
 
 const AdminPanel: NextPageWithLayout = () => {
     const adminContext = useContext(AdminContext);
-    if (!isValidAdmin(adminContext?.jwtAdmin)) Router.push("/login");
+
+    useEffect(() => {
+        if (!isValidAdmin(adminContext?.jwtAdmin)) Router.push("/login");
+    }, [adminContext]);
 
     return (
         <div className={styles.container}>
