@@ -48,7 +48,7 @@
     font-size: var(--h1);
 }
 
-@media (max-width: 425px) {
+@media (max-width: 512px) {
     .container {
         text-align: left;
         grid-template-columns: 1fr;

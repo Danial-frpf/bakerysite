@@ -3,17 +3,25 @@ import styles from "../../../styles/AddCategory.module.css";
 import AddAdminFeatures from "../../../src/hoc/AddAdminFeatures";
 import InputField from "../../../src/components/InputField";
 import Button from "../../../src/components/Button";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const AddCategory: NextPage = () => {
+    const [error, setError] = useState("");
     const inputRef: React.LegacyRef<HTMLInputElement> | undefined =
         useRef(null);
 
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const category = e.currentTarget.category.value;
-        console.log("%c Add_Category", "color: yellow;");
-        console.log(category);
+        const imageFile = e.currentTarget.imageFile.value;
+        if (category && imageFile) {
+            console.log("%c Add_Category", "color: yellow;");
+            setError("");
+            console.log(category);
+            console.log(imageFile);
+        } else {
+            setError("Category and image are required");
+        }
     };
     const imageInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         const imageFile = e.currentTarget.value;
@@ -28,20 +36,24 @@ const AddCategory: NextPage = () => {
     };
     return (
         <div className={styles.container}>
+            <h1>Add Category</h1>
             <form className={styles.form} onSubmit={submitHandler}>
-                <InputField label="Category Name: " name="category" />
+                <InputField label="Category: " name="category" />
                 <input
                     type="file"
                     name="imageFile"
                     ref={inputRef}
                     onChange={imageInputHandler}
                 />
-                <Button
-                    label="Add Image"
-                    size="md"
-                    props={{ onClick: imageButtonHandler }}
-                />
-                <Button label="Create Category" size="md" type="submit" />
+                <p>{error}</p>
+                <div className={styles.buttonContainer}>
+                    <Button
+                        label="Add Image"
+                        props={{ onClick: imageButtonHandler }}
+                    />
+                    <Button label="Preview" />
+                    <Button label="Create" type="submit" />
+                </div>
             </form>
         </div>
     );

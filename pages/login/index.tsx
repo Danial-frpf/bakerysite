@@ -57,7 +57,7 @@ const Login: NextPageWithLayout = () => {
                     type="password"
                 />
                 <p>{error}</p>
-                <Button label="Login" />
+                <Button label="Login" type="submit" />
             </form>
         </div>
     );

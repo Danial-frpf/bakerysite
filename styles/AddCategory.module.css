@@ -1,9 +1,22 @@
 .container {
     display: flex;
+    position: relative;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1vh 1vw;
     height: 100vh;
+}
+
+.container h1 {
+    position: absolute;
+    top: 1vh;
+    text-align: center;
+    z-index: var(--backLayer);
+}
+
+.container p {
+    color: red;
 }
 
 .form {
@@ -15,4 +28,13 @@
 
 .form input[type="file"] {
     display: none;
+}
+
+.buttonContainer {
+    display: flex;
+    margin-top: 2vh;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 1vw;
 }

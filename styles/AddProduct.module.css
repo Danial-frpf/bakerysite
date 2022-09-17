@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1vh 1vw;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 4vh;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form textarea {
+    font-size: var(--p);
+    width: 100%;
+    background-color: var(--secondary-orange-40);
+    border: 2px solid var(--main-800);
+    padding: 1vh 1vw;
+}
+
+.form input[type="file"] {
+    display: none;
+}
+
+.form textarea:focus {
+    background-color: var(--secondary-yellow-40);
+    border-color: var(--secondary-orange);
+}
+
+.buttonContainer {
+    display: flex;
+    margin-top: 2vh;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 1vw;
+}

@@ -10,7 +10,9 @@
 
 .container h1 {
     position: absolute;
-    top: 0;
+    top: 1vh;
+    text-align: center;
+    z-index: var(--backLayer);
 }
 
 .panel {

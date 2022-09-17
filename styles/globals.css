@@ -10,6 +10,10 @@
     --h2: calc(var(--baseFont) + 4vw);
     --h1: calc(var(--baseFont) + 6vw);
 
+    /* Layers middleLayer is default 0 */
+    --backLayer: -10;
+    --frontLayer: 10;
+
     /* Screen sizes */
     --mobile: 512px;
     --laptop: 1028px;
