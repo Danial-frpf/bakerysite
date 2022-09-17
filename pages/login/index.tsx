@@ -33,7 +33,7 @@ const Login: NextPageWithLayout = () => {
                 adminContext?.setJwtAdmin(accessToken);
                 localStorage.setItem("accessToken", accessToken);
                 setError("");
-                Router.push("/adminpanel");
+                Router.push("/admin_panel");
             } else {
                 setError(message);
             }
@@ -43,7 +43,7 @@ const Login: NextPageWithLayout = () => {
     };
 
     useEffect(() => {
-        if (isValidAdmin(adminContext?.jwtAdmin)) Router.push("/adminpanel");
+        if (isValidAdmin(adminContext?.jwtAdmin)) Router.push("/admin_panel");
     }, [adminContext]);
 
     return (

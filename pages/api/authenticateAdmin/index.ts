@@ -5,11 +5,12 @@ const authenticateAdmin = (req: NextApiRequest, res: NextApiResponse) => {
     const ACCESS_TOKEN_SECRET = "secret";
     const USER_NAME = "ultrapoweridpass123";
     const USER_PASSWORD = "ultrapoweridpass123";
+    const TOKEN_EXPIRY = "5s";
     if (req.method === "POST") {
         const { user, password } = req.body;
         if (user === USER_NAME && password === USER_PASSWORD) {
             const accessToken = jwt.sign({ name: user }, ACCESS_TOKEN_SECRET, {
-                expiresIn: "60s",
+                expiresIn: TOKEN_EXPIRY,
             });
             res.status(200).json({
                 message: "Login was successful",

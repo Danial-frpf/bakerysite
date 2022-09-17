@@ -87,7 +87,7 @@
 
 body {
     background-image: url(../public/Bakerybg.jpg);
-    background-size: contain;
+    background-size: 100vw;
     background-repeat: repeat;
 }
 
@@ -128,4 +128,10 @@ h5 {
 p {
     font-size: var(--p);
     color: var(--main-800);
+}
+
+@media (min-width: 2056px) {
+    body {
+        background-size: auto;
+    }
 }
