@@ -2,11 +2,13 @@
 
 exports[`matches snapshot 1`] = `
 <button
-  className="container md"
+  className="container md undefined"
   data-testid="Button"
-  type="submit"
+  type="button"
 >
-  <h4>
+  <h4
+    data-testid="Label"
+  >
     <span>
       Button
     </span>
@@ -16,11 +18,13 @@ exports[`matches snapshot 1`] = `
 
 exports[`matches snapshot 2`] = `
 <button
-  className="container lg"
+  className="container lg undefined"
   data-testid="Button"
-  type="submit"
+  type="button"
 >
-  <h2>
+  <h2
+    data-testid="Label"
+  >
     <span>
       Button
     </span>
@@ -30,11 +34,13 @@ exports[`matches snapshot 2`] = `
 
 exports[`matches snapshot 3`] = `
 <button
-  className="container sm"
+  className="container sm undefined"
   data-testid="Button"
-  type="submit"
+  type="button"
 >
-  <p>
+  <p
+    data-testid="Label"
+  >
     <span>
       Button
     </span>
@@ -44,11 +50,13 @@ exports[`matches snapshot 3`] = `
 
 exports[`matches snapshot 4`] = `
 <button
-  className="container xl"
+  className="container xl undefined"
   data-testid="Button"
-  type="submit"
+  type="button"
 >
-  <h1>
+  <h1
+    data-testid="Label"
+  >
     <span>
       Button
     </span>

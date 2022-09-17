@@ -1,12 +1,17 @@
 import { useState } from "react";
+import Label from "../Label";
 import styles from "./styles.module.css";
 
 export interface IInputField {
     label: string;
     name: string;
     placeholder?: string;
-    type?: "text" | "password";
+    type?: "text" | "password" | "file";
     size?: "sm" | "md" | "lg" | "xl";
+    props?: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLDivElement>,
+        HTMLDivElement
+    >;
 }
 const InputField: React.FC<IInputField> = ({
     label,
@@ -14,80 +19,39 @@ const InputField: React.FC<IInputField> = ({
     type = "text",
     size = "md",
     placeholder = "",
+    props,
 }) => {
     const [value, setValue] = useState("");
     const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value);
     };
 
-    if (size === "sm") {
-        return (
-            <div
-                className={`${styles.container} ${styles.sm}`}
-                data-testid="InputField"
-            >
-                <p>
-                    <span>{label}</span>
-                </p>
-                <input
-                    type={type}
-                    name={name}
-                    placeholder={placeholder}
-                    value={value}
-                    onChange={changeHandler}
-                />
-            </div>
-        );
-    }
+    let sizeStyle = "";
 
-    if (size === "md") {
-        return (
-            <div
-                className={`${styles.container} ${styles.md}`}
-                data-testid="InputField"
-            >
-                <h4>
-                    <span>{label}</span>
-                </h4>
-                <input
-                    type={type}
-                    name={name}
-                    placeholder={placeholder}
-                    value={value}
-                    onChange={changeHandler}
-                />
-            </div>
-        );
-    }
-
-    if (size === "lg") {
-        return (
-            <div
-                className={`${styles.container} ${styles.md}`}
-                data-testid="InputField"
-            >
-                <h2>
-                    <span>{label}</span>
-                </h2>
-                <input
-                    type={type}
-                    name={name}
-                    placeholder={placeholder}
-                    value={value}
-                    onChange={changeHandler}
-                />
-            </div>
-        );
+    switch (size) {
+        case "sm":
+            sizeStyle = styles.sm;
+            break;
+        case "md":
+            sizeStyle = styles.md;
+            break;
+        case "lg":
+            sizeStyle = styles.lg;
+            break;
+        case "xl":
+            sizeStyle = styles.xl;
+            break;
+        default:
+            break;
     }
 
     return (
         <div
-            className={`${styles.container} ${styles.xl}`}
             data-testid="InputField"
+            {...props}
+            className={`${styles.container} ${sizeStyle} ${props?.className}`}
         >
-            <h1>
-                <span>{label}</span>
-            </h1>
+            <Label label={label} size={size} />
             <input
                 type={type}
                 name={name}

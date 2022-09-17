@@ -22,19 +22,23 @@
 .sm {
     border-radius: 4px;
     padding: 0.5vh 0.5vw;
+    margin-bottom: 0.5vh;
 }
 
 .md {
     border-radius: 8px;
     padding: 0.5vh 1vw;
+    margin-bottom: 1vh;
 }
 
 .lg {
     border-radius: 8px;
     padding: 1vh 1vw;
+    margin-bottom: 1vh;
 }
 
 .xl {
     border-radius: 16px;
+    margin-bottom: 2vh;
     padding: 1vh 2vw;
 }

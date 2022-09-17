@@ -2,10 +2,12 @@
 
 exports[`matches snapshot 1`] = `
 <div
-  className="container md"
+  className="container md undefined"
   data-testid="InputField"
 >
-  <h4>
+  <h4
+    data-testid="Label"
+  >
     <span>
       username
     </span>
@@ -22,10 +24,12 @@ exports[`matches snapshot 1`] = `
 
 exports[`matches snapshot 2`] = `
 <div
-  className="container sm"
+  className="container sm undefined"
   data-testid="InputField"
 >
-  <p>
+  <p
+    data-testid="Label"
+  >
     <span>
       username
     </span>
@@ -42,10 +46,12 @@ exports[`matches snapshot 2`] = `
 
 exports[`matches snapshot 3`] = `
 <div
-  className="container md"
+  className="container lg undefined"
   data-testid="InputField"
 >
-  <h2>
+  <h2
+    data-testid="Label"
+  >
     <span>
       username
     </span>
@@ -62,10 +68,12 @@ exports[`matches snapshot 3`] = `
 
 exports[`matches snapshot 4`] = `
 <div
-  className="container xl"
+  className="container xl undefined"
   data-testid="InputField"
 >
-  <h1>
+  <h1
+    data-testid="Label"
+  >
     <span>
       username
     </span>

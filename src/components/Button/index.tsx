@@ -1,61 +1,49 @@
+import Label from "../Label";
 import styles from "./styles.module.css";
 
 export interface IButton {
     label: string;
     size?: "sm" | "md" | "lg" | "xl";
+    type?: "submit" | "button";
+    props?: React.DetailedHTMLProps<
+        React.ButtonHTMLAttributes<HTMLButtonElement>,
+        HTMLButtonElement
+    >;
 }
-const Button: React.FC<IButton> = ({ label, size = "md" }) => {
-    if (size === "sm") {
-        return (
-            <button
-                className={`${styles.container} ${styles.sm}`}
-                type="submit"
-                data-testid="Button"
-            >
-                <p>
-                    <span>{label}</span>
-                </p>
-            </button>
-        );
-    }
 
-    if (size === "md") {
-        return (
-            <button
-                className={`${styles.container} ${styles.md}`}
-                type="submit"
-                data-testid="Button"
-            >
-                <h4>
-                    <span>{label}</span>
-                </h4>
-            </button>
-        );
-    }
+const Button: React.FC<IButton> = ({
+    label,
+    size = "md",
+    type = "button",
+    props,
+}) => {
+    let sizeStyle = "";
 
-    if (size === "lg") {
-        return (
-            <button
-                className={`${styles.container} ${styles.lg}`}
-                type="submit"
-                data-testid="Button"
-            >
-                <h2>
-                    <span>{label}</span>
-                </h2>
-            </button>
-        );
+    switch (size) {
+        case "sm":
+            sizeStyle = styles.sm;
+            break;
+        case "md":
+            sizeStyle = styles.md;
+            break;
+        case "lg":
+            sizeStyle = styles.lg;
+            break;
+        case "xl":
+            sizeStyle = styles.xl;
+            break;
+        default:
+            break;
     }
 
     return (
         <button
-            className={`${styles.container} ${styles.xl}`}
-            type="submit"
+            type={type}
             data-testid="Button"
+            {...props}
+            className={`${styles.container} ${sizeStyle} ${props?.className}`}
         >
-            <h1>
-                <span>{label}</span>
-            </h1>
+            <Label label={label} size={size} />
         </button>
     );
 };

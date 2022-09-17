@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<h4
+  data-testid="Label"
+>
+  <span>
+    test
+  </span>
+</h4>
+`;
+
+exports[`matches snapshot 2`] = `
+<p
+  data-testid="Label"
+>
+  <span>
+    test
+  </span>
+</p>
+`;
+
+exports[`matches snapshot 3`] = `
+<h2
+  data-testid="Label"
+>
+  <span>
+    test
+  </span>
+</h2>
+`;
+
+exports[`matches snapshot 4`] = `
+<h1
+  data-testid="Label"
+>
+  <span>
+    test
+  </span>
+</h1>
+`;
