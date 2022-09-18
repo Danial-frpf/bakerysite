@@ -1,17 +1,22 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import jwt from "jsonwebtoken";
+import connectMongo from "../../../lib/mongoose";
 
 const authenticateAdmin = (req: NextApiRequest, res: NextApiResponse) => {
-    const ACCESS_TOKEN_SECRET = "secret";
-    const USER_NAME = "ultrapoweridpass123";
-    const USER_PASSWORD = "ultrapoweridpass123";
     const TOKEN_EXPIRY = "3600s";
     if (req.method === "POST") {
         const { user, password } = req.body;
-        if (user === USER_NAME && password === USER_PASSWORD) {
-            const accessToken = jwt.sign({ name: user }, ACCESS_TOKEN_SECRET, {
-                expiresIn: TOKEN_EXPIRY,
-            });
+        if (
+            user === process.env.USER_NAME &&
+            password === process.env.USER_PASSWORD
+        ) {
+            const accessToken = jwt.sign(
+                { name: user },
+                process.env.ACCESS_TOKEN_SECRET!,
+                {
+                    expiresIn: TOKEN_EXPIRY,
+                }
+            );
             res.status(200).json({
                 message: "Login was successful",
                 accessToken,
