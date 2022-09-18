@@ -12,7 +12,6 @@
     position: absolute;
     top: 1vh;
     text-align: center;
-    z-index: var(--backLayer);
 }
 
 .panel {
