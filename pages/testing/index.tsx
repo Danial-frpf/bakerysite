@@ -1,19 +1,40 @@
 import { NextPage } from "next";
 import React from "react";
-import Button from "../../src/components/Button";
-import InputField from "../../src/components/InputField";
+import ProductCard from "../../src/components/ProductCard";
 
 const Testing: NextPage = () => {
     return (
         <>
-            <Button label="button" size="sm" />
-            <Button label="button" />
-            <Button label="button" size="lg" />
-            <Button label="button" size="xl" />
-            <InputField label="User:" name="user" size="sm" />
-            <InputField label="User:" name="user" size="md" />
-            <InputField label="User:" name="user" size="lg" />
-            <InputField label="User:" name="user" size="xl" />
+            <div style={{ display: "flex", flexDirection: "row" }}>
+                <ProductCard label="test" image="/cupcake.png" size="lg" />
+                <ProductCard
+                    label="test"
+                    image="/cupcake.png"
+                    size="lg"
+                    selected
+                />
+                <ProductCard label="test" image="/cupcake.png" size="lg" />
+            </div>
+            <div style={{ display: "flex", flexDirection: "row" }}>
+                <ProductCard label="test" image="/cupcake.png" size="md" />
+                <ProductCard
+                    label="test"
+                    image="/cupcake.png"
+                    size="md"
+                    selected
+                />
+                <ProductCard label="test" image="/cupcake.png" size="md" />
+            </div>
+            <div style={{ display: "flex", flexDirection: "row" }}>
+                <ProductCard label="test" image="/cupcake.png" size="sm" />
+                <ProductCard
+                    label="test"
+                    image="/cupcake.png"
+                    size="sm"
+                    selected
+                />
+                <ProductCard label="test" image="/cupcake.png" size="sm" />
+            </div>
         </>
     );
 };

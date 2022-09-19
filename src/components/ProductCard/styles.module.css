@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    background-color: var(--secondary-orange-20);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1vh 4vw;
+    gap: 2vh;
+    width: min-content;
+}
+
+.container:hover {
+    background-color: var(--secondary-orange-40);
+}
+
+.container:active {
+    background-color: var(--secondary-blue-40);
+}
+
+.selected {
+    background-color: var(--secondary-orange-60);
+}
+
+.selected:hover {
+    background-color: var(--secondary-orange-60);
+}
+
+.selected:active {
+    background-color: var(--secondary-orange-60);
+}
+
+.image {
+    max-width: 50vw;
+    max-height: 60vh;
+    object-fit: contain;
+}
+
+.lg {
+    max-width: 50vw;
+    max-height: 60vh;
+}
+
+.md {
+    max-width: 40vw;
+    max-height: 50vh;
+}
+
+.sm {
+    max-width: 30vw;
+    max-height: 40vh;
+}
