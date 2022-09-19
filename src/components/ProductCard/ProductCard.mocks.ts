@@ -1,7 +1,8 @@
 import { IProductCard } from ".";
 
 const base: IProductCard = {
-    sampleTextProp: "Hello world!",
+    label: "Hello world!",
+    image: "/cupcake.png",
 };
 
 export const mockProductCardProps = {
