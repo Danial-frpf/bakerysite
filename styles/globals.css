@@ -134,6 +134,17 @@ p {
     color: var(--main-800);
 }
 
+@media (max-width: 512px) {
+    :root {
+        --p: calc(var(--baseFont) + 1vh);
+        --h5: calc(var(--baseFont) + 1.5vh);
+        --h4: calc(var(--baseFont) + 2vh);
+        --h3: calc(var(--baseFont) + 3vh);
+        --h2: calc(var(--baseFont) + 4vh);
+        --h1: calc(var(--baseFont) + 6vh);
+    }
+}
+
 @media (min-width: 2056px) {
     body {
         background-size: auto;

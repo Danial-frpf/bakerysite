@@ -16,6 +16,8 @@
 
 .container p {
     color: red;
+    width: clamp(95vw, 70vw, 50vw);
+    text-align: center;
 }
 
 .form {
