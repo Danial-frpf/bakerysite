@@ -18,21 +18,8 @@
     justify-content: center;
 }
 
-.form textarea {
-    font-size: var(--p);
-    width: 100%;
-    background-color: var(--secondary-orange-40);
-    border: 2px solid var(--main-800);
-    padding: 1vh 1vw;
-}
-
 .form input[type="file"] {
     display: none;
-}
-
-.form textarea:focus {
-    background-color: var(--secondary-yellow-40);
-    border-color: var(--secondary-orange);
 }
 
 .buttonContainer {
@@ -42,4 +29,16 @@
     justify-content: center;
     flex-flow: row wrap;
     gap: 1vw;
+}
+
+.error {
+    color: red;
+    max-width: 60vw;
+    text-align: center;
+}
+
+@media (max-width: 512px) {
+    .error {
+        max-width: 95vw;
+    }
 }

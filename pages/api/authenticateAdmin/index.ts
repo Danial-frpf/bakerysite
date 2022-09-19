@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import jwt from "jsonwebtoken";
-import connectMongo from "../../../lib/mongoose";
 
 const authenticateAdmin = (req: NextApiRequest, res: NextApiResponse) => {
     const TOKEN_EXPIRY = "3600s";
