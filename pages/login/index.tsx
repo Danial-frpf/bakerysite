@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import Button from "../../src/components/Button";
 import InputField from "../../src/components/InputField";
 import styles from "../../styles/Login.module.css";
-import axios from "axios";
 import { NextPageWithLayout } from "../page";
 import ContextLayout from "../../src/layouts/ContextLayout";
 import { AdminContext } from "../../src/context";
 import Router from "next/router";
 import { isValidAdmin } from "../../lib/auth/admin";
+import loginAdmin from "../../lib/axios/loginAdmin";
 
 const Login: NextPageWithLayout = () => {
     const [error, setError] = useState("");
@@ -20,15 +20,7 @@ const Login: NextPageWithLayout = () => {
         const password = e.currentTarget.password.value;
 
         try {
-            const res = await axios.post(
-                "http://localhost:3000/api/authenticateAdmin",
-                {
-                    user,
-                    password,
-                }
-            );
-
-            const { message, accessToken } = res.data;
+            const { message, accessToken } = await loginAdmin(user, password);
             if (accessToken) {
                 adminContext?.setJwtAdmin(accessToken);
                 localStorage.setItem("accessToken", accessToken);

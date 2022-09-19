@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const SUCCESS_MESSAGE = "Mongo connection was successful";
 const ERROR_MESSAGE = "Failed to connect to mongo";
 
-const connectMongo = () => {
+const connectMongo = async () => {
     try {
         mongoose.connect(process.env.MONGO_URI!);
         return SUCCESS_MESSAGE;
